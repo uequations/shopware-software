@@ -1,6 +1,10 @@
 # Shopware Software
-## GCLOUD
 
+## GCLOUD
+### Python
+```shell
+export CLOUDSDK_PYTHON=/usr/bin/python3.9
+```
 
 ## Docker
 ### Build

@@ -17,3 +17,10 @@ RUN --mount=type=secret,id=composer_auth,dst=/src/auth.json \
 FROM base-image AS final
 
 COPY --from=build --chown=82 --link /src /var/www/html
+
+
+# Add entrypoint script
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
